@@ -1,6 +1,6 @@
 <h1>Unit 3 Final Project: [[Project Name HERE]]</h1>
 
-<strong>Interaction</strong>:
+<p>Interaction:</p>
 
 <strong>Description</strong>:
 

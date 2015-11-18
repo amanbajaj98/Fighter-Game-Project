@@ -11,6 +11,14 @@
   <strong>Goal:</strong> You should have solid planning done by the end of this milestone.
   <ul>
     <li>first task : who is doing it (if in team)</li>
+    <ul>
+      <li>
+        Aman: Does fighter class, gets it to jump and punch doesn't have to look pretty
+      </li>
+      <li>
+        Kunaal: Sets up background and health bar, gets started on drawing fighters
+      </li>
+    </ul>
   </ul>
 </div>
 

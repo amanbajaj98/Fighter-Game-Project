@@ -20,6 +20,8 @@ class Fighter
     torsoPos.y = headPos.y + bodySize[0]/2 + bodySize[2]/2;
     leftLegPos.x = torsoPos.x - bodySize[1]/2;
     leftLegPos.y = torsoPos.y - bodySize[2];
+    rightLegPos.x = torsoPos.x + bodySize[1]/2;
+    rightLegPos.y = torsoPos.y - bodySize[2];
     body[0] = headPos;
     body[1] = torsoPos;
     body[2] = leftLegPos;
@@ -30,8 +32,13 @@ class Fighter
     ellipse(torsoPos.x,torsoPos.y,bodySize[1],bodySize[2]);
     ellipseMode(RIGHT);
     pushMatrix();
-    rotate(PI/4);
+    rotate(-PI/4);
     ellipse(leftLegPos.x,leftLegPos.y,bodySize[3],bodySize[4]);
     popMatrix();
+    pushMatrix();
+    rotate(PI/4);
+    ellipse(rightLegPos.x,rightLegPos.y,bodySize[3],bodySize[4]);
+    popMatrix();
+    
   }
 }

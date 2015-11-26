@@ -1,42 +1,74 @@
 class Fighter
 {
-  private PImage ryu;
+  private PImage image;
   private PVector pos = new PVector();
-  float jumpPowa = 5;
-  float grav = -1;
-  Fighter(float _x,float _y)
+  private boolean jumped = false;
+  private float jumpPowa = 5;
+  private float grav = 0.1;
+  private PVector size = new PVector(150,300);
+  private float speed = 3;
+  private boolean playerOne = false;
+  
+  Fighter(float _x,float _y,String imgLoc,boolean player)
   {
-    ryu = loadImage("ryu.png");
+    image = loadImage(imgLoc);
     pos.x = _x;
     pos.y = _y;
+    playerOne = player;
   }
   
   public void drawFighter()
   {
-    image(ryu,pos.x,pos.y,150,300);
+    image(image,pos.x,pos.y,size.x,size.y);
   }
   
-  public void animateCharacter()
+  public void animatePlayer()
   {
     if(keyPressed)
     {
-      if(key == 'd')
+      if(!playerOne)
       {
-        pos.x += 1;
-      }
-      if(key == 'a')
-      {
-        pos.x -= 1;
-      }
-      if(key == 'w')
-      {
-        pos.y += jumpPowa;
-        jumpPowa += grav;
-        if(pos.y >= 720);
+        if(key == 'd')
         {
-          pos.y = 720;
+          pos.x += speed;
+        }
+        if(key == 'a')
+        {
+          pos.x -= speed;
+        }
+        if(key == 'w')
+        {
+          jumped = true;
         }
       }
+        if(playerOne && key == CODED)
+        {
+          if(keyCode == RIGHT)
+          {
+            pos.x += speed;
+          }
+          if(keyCode == LEFT)
+          {
+            pos.x -= speed;
+          }
+          if(keyCode == UP)
+          {
+            jumped = true;
+          }
+        }
+    }
+    
+    
+    if(jumped == true)
+    {
+      pos.y -= jumpPowa;
+        jumpPowa -= grav;
+        if(pos.y > 720 - size.y)
+        {
+          pos.y = 720 - size.y;
+          jumpPowa = 5;
+          jumped = false;
+        }
     }
   }
 }

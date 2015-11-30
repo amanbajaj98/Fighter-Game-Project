@@ -13,7 +13,7 @@
     <li>first task : who is doing it (if in team)</li>
     <ul>
       <li>
-        Aman: Does fighter class, gets it to jump and punch doesn't have to look pretty
+        Aman: Does fighter class, gets it to draw and animate(duck and jump)
       </li>
       <li>
         Kunaal: Sets up background and health bar, gets started on drawing fighters
@@ -27,6 +27,12 @@
   <strong>Goal:</strong> You should have a small prototype by the end of this milestone.
   <ul>
     <li>first task : who is doing it (if in team)</li>
+    <ul>
+        <li>
+            Aman: Finishes fighter class with balloon men
+        </li>
+        <li>
+            Kunaal:finishes drawing of fighters
   </ul>
 </p>
 
@@ -36,5 +42,6 @@
   <strong>Goal:</strong> You should have iterated and improved on your prototype by the end of this milestone.
   <ul>
     <li>first task : who is doing it (if in team)</li>
+
   </ul>
 </div>

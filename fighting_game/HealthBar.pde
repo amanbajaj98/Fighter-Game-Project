@@ -1,35 +1,65 @@
-class HealthBarP1
+class HealthBar
 {
+  boolean playerOne;
   int x;
   int y;
-  int w;
+  float w;
   int h;
   color c;
-  int damage;
+  float damage;
   String s = "Player 1: Ryu";
+  String s2 = "Player 2: Guile";
   String hlth = "Player Health Level Full";
   
- HealthBarP1()
+ HealthBar(boolean P1)
   {
-    c = color(70,150,120);
-    w = 500;
-    h = 50;
-    x = 775;
-    y = 650;
-    damage = int(random(1,10));
+    if(P1 == true)
+    {
+      c = color(70,150,120);
+      w = 500;
+      h = 50;
+      x = 775;
+      y = 650;
+      damage = int(random(1,10));
+      playerOne = true;
+    }
+    
+    else
+    {
+      x = 0;
+      y = 25;
+      playerOne = false;
+    }
   }
-  public void DrawHealthBar1()
+  public void DrawHealthBar()
   {
-    noStroke();
-    fill(c,200);
-    rect(x,y,w,h);
-    fill(0,0,0,0.5);
-    stroke(255);
-    rect(775,650,500,50);
-    fill(255);
-    textSize(32);
-    text(s, 775, 600, 2100, 100);    
+    if(playerOne == true)
+    {
+      noStroke();
+      fill(c,200);
+      rect(x,y,w,h);
+      fill(0,0,0,0.5);
+      stroke(255);
+      rect(775,650,500,50);
+      fill(255);
+      textSize(32);
+      text(s, 775, 600, 2100, 100);    
+    }
+    
+    else
+    {
+      noStroke();
+      fill(c,200);
+      rect(x,y,w,h);
+      fill(0,0,0,0.5);
+      stroke(255);
+      rect(0,50,500,50);
+      fill(255);
+      textSize(32);
+      text(s2, 0, 0, 2100, 100);
+    }
   }
+  
   public void health()
   {
     if(w == 500)
@@ -113,4 +143,5 @@ class HealthBarP1
       }
     }
   }
+  
 }

@@ -8,9 +8,11 @@ class Fighter
   private PVector size = new PVector(150,300);
   private float speed = 3;
   private boolean playerOne = false;
+  private HealthBar healthBar;
   
-  Fighter(float _x,float _y,String imgLoc,boolean player)
+  Fighter(float _x,float _y,String imgLoc,boolean player,boolean hbb)
   {
+    healthBar = new HealthBar(hbb);
     image = loadImage(imgLoc);
     pos.x = _x;
     pos.y = _y;
@@ -20,6 +22,8 @@ class Fighter
   public void drawFighter()
   {
     image(image,pos.x,pos.y,size.x,size.y);
+    healthBar.DrawHealthBar();
+    healthBar.health();
   }
   
   public void animatePlayer()
@@ -73,6 +77,9 @@ class Fighter
   
   public void collision(Fighter other)
   {
-    
+    if(dist(pos.x,pos.y,other.pos.x,other.pos.y) <= 0.5)
+    {
+      
+    }
   }
 }

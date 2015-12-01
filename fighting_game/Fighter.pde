@@ -79,7 +79,7 @@ class Fighter
   {
     if(dist(pos.x,pos.y,other.pos.x,other.pos.y) <= 0.5)
     {
-      
+      other.healthBar.damageMe();
     }
   }
 }

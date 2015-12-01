@@ -33,4 +33,6 @@ void draw()
   playerOne.animatePlayer();
   playerTwo.drawFighter();
   playerTwo.animatePlayer();
+  playerOne.collision(playerTwo);
+  playerTwo.collision(playerOne);
 }

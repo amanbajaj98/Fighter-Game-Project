@@ -110,38 +110,35 @@ class HealthBar
       textSize(32);
       text(hlth, 275, 650, 2100, 100);
     }
-    if(keyPressed == true)
+    if (w > 450)
     {
-      if(key == 'd')
-      {
-        w -= damage;
-        print("hello");
-      }
-      if (w > 450)
-      {
-        c = color(0,255,0);
-      }
-      if (w < 450 && w > 300)
-      {
-        c = color(242,255,0);
-      }
-      if (w < 300 && w > 200)
-      {
-        c = color(242,255,0);
-      }
-      if (w < 200 && w > 125)
-      {
-        c = color(255,187,0);
-      }
-      if (w < 125 && w > 0)
-      {
-        c = color(255,0,0);
-      }
-      if (w < 0)
-      {
-        c = color(0,0,0);
-      }
+      c = color(0,255,0);
+    }
+    if (w < 450 && w > 300)
+    {
+      c = color(242,255,0);
+    }
+    if (w < 300 && w > 200)
+    {
+      c = color(242,255,0);
+    }
+    if (w < 200 && w > 125)
+    {
+      c = color(255,187,0);
+    }
+    if (w < 125 && w > 0)
+    {
+      c = color(255,0,0);
+    }
+    if (w < 0)
+    {
+      c = color(0,0,0);
     }
   }
   
+  public void damageMe()
+  {
+    w -= damage;
+    
+  }
 }

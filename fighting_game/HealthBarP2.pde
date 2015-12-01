@@ -2,13 +2,14 @@ class HealthBarP2 extends HealthBarP1
 {
   int x2;
   int y2;
+  String s2 = "Player 2: Guile";
   HealthBarP2()
   {
     super.c = color(70,150,120);
     super.w = 500;
     super.h = 50;
     x2 = 0;
-    y2 = 25;
+    y2 = 50;
     super.damage = int(random(1,10));
   }
   public void DrawHealthBar2()
@@ -18,7 +19,10 @@ class HealthBarP2 extends HealthBarP1
     rect(x2,y2,w,h);
     fill(0,0,0,0.5);
     stroke(255);
-    rect(0,25,500,50);
+    rect(0,50,500,50);
+    fill(255);
+    textSize(32);
+    text(s2, 0, 0, 2100, 100);  
   }
   public void health2()
   {

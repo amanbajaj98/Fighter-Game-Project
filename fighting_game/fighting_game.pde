@@ -14,9 +14,9 @@ HealthBarP2 p2Health;
 
 void setup()
 {
-  size(800,720);
-  playerOne = new Fighter(600,420,"ryu.png",true);
-  playerTwo = new Fighter(200,420,"guile.png",false);
+  size(1280,720);
+  playerOne = new Fighter(600,280,"ryu.png",true);
+  playerTwo = new Fighter(200,280,"guile.png",false);
   background = loadImage("Background.jpg");
   p1 = loadImage("Ryu.jpg");
   p2 = loadImage("Guile.jpg");
@@ -35,8 +35,8 @@ void draw()
   p1Health.DrawHealthBar1();
   p2Health.DrawHealthBar2();
   p2Health.health2();
-  image(p1,100,650,50,50);
-  image(p2,650,100,50,50);
+  image(p1,200,650,50,50);
+  image(p2,650,25,50,50);
   playerOne.drawFighter();
   playerOne.animatePlayer();
   playerTwo.drawFighter();

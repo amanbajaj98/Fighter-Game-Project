@@ -58,7 +58,6 @@ class Fighter
         }
     }
     
-    
     if(jumped == true)
     {
       pos.y -= jumpPowa;
@@ -70,5 +69,10 @@ class Fighter
           jumped = false;
         }
     }
+  }
+  
+  public void collision(Fighter other)
+  {
+    
   }
 }

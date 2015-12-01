@@ -66,9 +66,9 @@ class Fighter
     {
       pos.y -= jumpPowa;
         jumpPowa -= grav;
-        if(pos.y > 720 - size.y)
+        if(pos.y > 580 - size.y)
         {
-          pos.y = 720 - size.y;
+          pos.y = 580 - size.y;
           jumpPowa = 5;
           jumped = false;
         }

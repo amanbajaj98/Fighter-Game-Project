@@ -4,11 +4,11 @@ Fighter playerTwo;
 PImage background;
 PImage p1;
 PImage p2;
-//import ddf.minim.*;
 
-//AudioPlayer player;
-//Minim minim; 
+import ddf.minim.*;
 
+AudioPlayer player;
+Minim minim; 
 
 void setup()
 {
@@ -18,9 +18,9 @@ void setup()
   background = loadImage("Background.jpg");
   p1 = loadImage("Ryu.jpg");
   p2 = loadImage("Guile.jpg");
-  //minim = new Minim(this);
-  //player = minim.loadFile("Theme.mp3", 2048);
-  //player.play();
+  minim = new Minim(this);
+  player = minim.loadFile("Theme.mp3", 2048);
+  player.play();
 }
 
 void draw()

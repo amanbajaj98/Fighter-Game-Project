@@ -1,8 +1,8 @@
-<h1>Unit 3 Final Project: [[Project Name HERE]]</h1>
+<h1>Unit 3 Final Project: Fighting Game</h1>
 
-<strong>Interaction:</strong>
+<strong>Arduino Force Sensor and Makey Makey</strong>
 
-<strong>Description</strong>:
+<strong>Creating Fighting Game Using Arduino Force Sensors and Makey Makey as a A controller. </strong>:
 
 <h2>Timeline</h2>
 
@@ -13,10 +13,10 @@
     <li>first task : who is doing it (if in team)</li>
     <ul>
       <li>
-        Aman: Does fighter class, gets it to draw and animate(duck and jump)
+        Aman: Does fighter class, gets it to draw and animate(move and jump)
       </li>
       <li>
-        Kunaal: Sets up background and health bar, gets started on drawing fighters
+        Kunaal: Sets up background(PImage) and health bar(Class), gets started on drawing fighters
       </li>
     </ul>
   </ul>
@@ -29,19 +29,21 @@
     <li>first task : who is doing it (if in team)</li>
     <ul>
         <li>
-            Aman: Finishes fighter class with balloon men
+            Aman: Finishes fighter class with sprites with working collisions(Flipping and Pvector)
         </li>
         <li>
-            Kunaal:finishes drawing of fighters
+            Kunaal:finishes drawing and animation(Walking Right and Left, Attacking, Jumping, Crouching, Falling) of fighters. 
+        </li>
   </ul>
 </p>
 
 <div>
-  <h3>Milestone #3: December 7th, 2015 (For C block)</br>
-  Milestone #3: December 8th, 2015 (For G block) </h3>
+  <h3>Milestone #3: December 8th, 2015 (For C block)</br>
+  Milestone #3: December 9th, 2015 (For G block) </h3>
   <strong>Goal:</strong> You should have iterated and improved on your prototype by the end of this milestone.
   <ul>
-    <li>first task : who is doing it (if in team)</li>
+    <li>Aman: Arduino: Force Sensor Code (Testing and finishing design of force sensor controller</li>
+    <li>Aman: Arduino: Makey Makey Controller (Testing and finishing design of Makey Makey Walk Pad</li>
 
   </ul>
 </div>

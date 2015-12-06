@@ -1,18 +1,17 @@
 class HealthBar
 {
-  boolean playerOne;
-  int x;
-  int y;
-  int x2;
-  int y2;
-  float w;
-  int h;
-  color c;
-  float damage;
-  String s = "Player 1: Ryu";
-  String s2 = "Player 2: Guile";
-  String hlth = "Player 1 Health Level Full";
-  String hlth2 = "Player 2 Health Level Full";
+  private boolean playerOne;
+  private int x;
+  private int y;
+  private float w;
+  private float w2;
+  private int h;
+  private color c;
+  private float damage;
+  private String s = "Player 1: Ryu";
+  private String s2 = "Player 2: Guile";
+  private String hlth = "Player 1 Health Level Full";
+  private String hlth2 = "Player 2 Health Level Full";
   
  HealthBar(boolean P1)
   {
@@ -20,6 +19,7 @@ class HealthBar
     {
       c = color(70,150,120);
       w = 500;
+      w2 = 500;
       h = 50;
       x = 775;
       y = 650;
@@ -28,8 +28,9 @@ class HealthBar
     }
     else
     {
-      x2 = 0;
-      y2 = 50;
+      x = 0;
+      y = 50;
+      c = color(70,150,120);
       playerOne = false;
     }
   }
@@ -47,72 +48,22 @@ class HealthBar
       textSize(32);
       text(s, 775, 600, 2100, 100);    
     }
-    
     else
     {
-      noStroke();
-      fill(c,200);
-      rect(x2,y2,w,h);
-      fill(0,0,0,0.5);
-      stroke(255);
-      rect(0,50,500,50);
       fill(255);
       textSize(32);
       text(s2, 0, 0, 2100, 100);
+      fill(0,0,0,0.5);
+      stroke(255);
+      rect(0,50,500,50);
+      fill(c,200);
+      noStroke();
+      rect(x,y,w,h);
     }
   }
   
   public void health()
   {
-    if(w == 500)
-    {
-      fill(c);
-      textSize(32);
-      text(hlth, 275, 650, 2100, 100);
-    }
-    if (w < 500 && w > 450)
-    {
-      String hlth = "Player Health Level High";
-      fill(c);
-      textSize(32);
-      text(hlth, 275, 650, 2100, 100);
-    }
-    if (w < 450 && w > 300)
-    {
-      String hlth = "Player Health Level Medium";
-      fill(c);
-      textSize(32);
-      text(hlth, 275, 650, 2100, 100);
-    }
-    if (w < 300 && w > 200)
-    {
-      String hlth = "Player Health Level Getting Low";
-      fill(c);
-      textSize(32);
-      text(hlth, 275, 650, 2100, 100);
-    }
-    if (w < 200 && w > 125)
-    {
-      String hlth = "Player Health Level Low";
-      fill(c);
-      textSize(32);
-      text(hlth, 275, 650, 2100, 100);
-    }
-    if (w < 125 && w > 0)
-    {
-      String hlth = "Player Health Level Critical";
-      fill(c);
-      textSize(32);
-      text(hlth, 275, 650, 2100, 100);
-    }
-    if (w < 0)
-    {
-      String hlth = "Player Health Level Fainted";
-      fill(255);
-      textSize(32);
-      text(hlth, 275, 650, 2100, 100);
-    }
-<<<<<<< Updated upstream
     if (w > 450)
     {
       c = color(0,255,0);
@@ -136,12 +87,14 @@ class HealthBar
     if (w < 0)
     {
       c = color(0,0,0);
-=======
+    }
     if(w == 500)
     {
       fill(c);
       textSize(32);
       text(hlth, 275, 650, 2100, 100);
+      textSize(32);
+      text(hlth2, 500, 50, 2100, 100);
     }
     if (w < 500 && w > 450)
     {
@@ -149,6 +102,10 @@ class HealthBar
       fill(c);
       textSize(32);
       text(hlth, 275, 650, 2100, 100);
+      String hlth2 = "Player Health Level High";
+      fill(c);
+      textSize(32);
+      text(hlth2, 500, 50, 2100, 100);
     }
     if (w < 450 && w > 300)
     {
@@ -156,6 +113,10 @@ class HealthBar
       fill(c);
       textSize(32);
       text(hlth, 275, 650, 2100, 100);
+      String hlth2 = "Player Health Level Medium";
+      fill(c);
+      textSize(32);
+      text(hlth2, 500, 50, 2100, 100);
     }
     if (w < 300 && w > 200)
     {
@@ -163,6 +124,10 @@ class HealthBar
       fill(c);
       textSize(32);
       text(hlth, 275, 650, 2100, 100);
+      String hlth2 = "Player Health Level Getting Low";
+      fill(c);
+      textSize(32);
+      text(hlth2, 500, 50, 2100, 100);
     }
     if (w < 200 && w > 125)
     {
@@ -170,6 +135,10 @@ class HealthBar
       fill(c);
       textSize(32);
       text(hlth, 275, 650, 2100, 100);
+      String hlth2 = "Player Health Level Low";
+      fill(c);
+      textSize(32);
+      text(hlth2, 500, 50, 2100, 100);
     }
     if (w < 125 && w > 0)
     {
@@ -177,61 +146,21 @@ class HealthBar
       fill(c);
       textSize(32);
       text(hlth, 275, 650, 2100, 100);
+      String hlth2 = "Player Health Level Critical";
+      fill(c);
+      textSize(32);
+      text(hlth2, 500, 50, 2100, 100);
     }
     if (w < 0)
     {
-      String hlth = "Player Health Level Fainted";
+      String hlth = "Player Fainted";
       fill(255);
       textSize(32);
       text(hlth, 275, 650, 2100, 100);
-    }
-    if(w == 500)
-    {
-      fill(c);
-      textSize(32);
-      text(hlth, 275, 650, 2100, 100);
-    }
-    if (w < 500 && w > 450)
-    {
-      String hlth = "Player Health Level High";
-      fill(c);
-      textSize(32);
-      text(hlth, 275, 650, 2100, 100);
-    }
-    if (w < 450 && w > 300)
-    {
-      String hlth = "Player Health Level Medium";
-      fill(c);
-      textSize(32);
-      text(hlth, 275, 650, 2100, 100);
-    }
-    if (w < 300 && w > 200)
-    {
-      String hlth = "Player Health Level Getting Low";
-      fill(c);
-      textSize(32);
-      text(hlth, 275, 650, 2100, 100);
-    }
-    if (w < 200 && w > 125)
-    {
-      String hlth = "Player Health Level Low";
-      fill(c);
-      textSize(32);
-      text(hlth, 275, 650, 2100, 100);
-    }
-    if (w < 125 && w > 0)
-    {
-      String hlth = "Player Health Level Critical";
-      fill(c);
-      textSize(32);
-      text(hlth, 275, 650, 2100, 100);
-    }
-    if (w < 0)
-    {
-      String hlth = "Player Health Level Fainted";
+      String hlth2 = "Player Fainted";
       fill(255);
       textSize(32);
-      text(hlth, 275, 650, 2100, 100);
+      text(hlth2, 500, 50, 2100, 100);
     }
     if(keyPressed == true)
     {
@@ -264,7 +193,6 @@ class HealthBar
       {
         c = color(0,0,0);
       }
->>>>>>> Stashed changes
     }
   }
   

@@ -1,0 +1,19 @@
+enum Status
+{
+  IDLE, 
+  WALKINGRIGHT,
+  WALKINGLEFT, 
+  JUMPINGRIGHT,
+  JUMPINGLEFT,
+  CROUCHINGRIGHT,
+  CROUCHINGLEFT,
+  ATTACKINGRIGHT,
+  ATTACKINGLEFT;
+}
+Status Idle;
+
+
+void Setup()
+{
+
+}

@@ -30,14 +30,13 @@ void draw()
 {
   background(82,212,255);
   image(background,0,0);
-  image(p1,200,650,50,50);
-  image(p2,650,25,50,50);
   playerOne.drawFighter();
   playerOne.animatePlayer();
   playerTwo.drawFighter();
   playerTwo.animatePlayer();
   playerOne.collision(playerTwo);
   playerTwo.collision(playerOne);
+<<<<<<< HEAD
   playerOne.flip(playerTwo);
   playerOne.punch();
   playerTwo.punch();
@@ -69,4 +68,8 @@ public void keyReleased()
   {
     playerTwo.punch = false;
   }
+=======
+  image(p1,200,650,50,50);
+  image(p2,1000,50,50,50);
+>>>>>>> origin/master
 }

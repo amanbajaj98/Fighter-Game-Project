@@ -1,5 +1,8 @@
+import processing.serial.*;
+
 Fighter playerOne;
 Fighter playerTwo;
+
 
 PImage background;
 PImage p1;
@@ -35,4 +38,35 @@ void draw()
   playerTwo.animatePlayer();
   playerOne.collision(playerTwo);
   playerTwo.collision(playerOne);
+  playerOne.flip(playerTwo);
+  playerOne.punch();
+  playerTwo.punch();
+}
+
+public void keyReleased()
+{
+  if(keyCode == LEFT)
+  {
+    playerOne.left = false;
+  }
+  if(keyCode == RIGHT)
+  {
+    playerOne.right = false;
+  }
+  if(keyCode == SHIFT)
+  {
+    playerOne.punch = false;
+  }
+  if(key == 'a' || key == 'A')
+  {
+    playerTwo.left = false;
+  }
+  if(key == 'd' || key == 'D')
+  {
+    playerTwo.right = false;
+  }
+  if(key == 'q' || key == 'Q')
+  {
+    playerTwo.punch = false;
+  }
 }

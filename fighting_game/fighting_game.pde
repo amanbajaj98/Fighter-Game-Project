@@ -36,10 +36,11 @@ void draw()
   playerTwo.animatePlayer();
   playerOne.collision(playerTwo);
   playerTwo.collision(playerOne);
-<<<<<<< HEAD
   playerOne.flip(playerTwo);
   playerOne.punch();
   playerTwo.punch();
+  image(p1,200,650,50,50);
+  image(p2,1000,50,50,50);
 }
 
 public void keyReleased()
@@ -68,8 +69,4 @@ public void keyReleased()
   {
     playerTwo.punch = false;
   }
-=======
-  image(p1,200,650,50,50);
-  image(p2,1000,50,50,50);
->>>>>>> origin/master
 }

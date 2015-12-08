@@ -1,5 +1,6 @@
 import processing.serial.*;
-
+Serial myPort;
+String val;
 Fighter playerOne;
 Fighter playerTwo;
 
@@ -24,6 +25,9 @@ void setup()
   minim = new Minim(this);
   player = minim.loadFile("Theme.mp3", 2048);
   player.play();
+  String portName = Serial.list()[7]; //change the 0 to a 1 or 2 etc. to match your port
+  myPort = new Serial(this, portName, 9600); 
+  myPort.bufferUntil('\n');
 }
 
 void draw()
@@ -36,13 +40,12 @@ void draw()
   playerTwo.animatePlayer();
   playerOne.collision(playerTwo);
   playerTwo.collision(playerOne);
-<<<<<<< HEAD
   playerOne.flip(playerTwo);
   playerOne.punch();
   playerTwo.punch();
 }
 
-public void keyReleased()
+void keyReleased()
 {
   if(keyCode == LEFT)
   {
@@ -52,10 +55,6 @@ public void keyReleased()
   {
     playerOne.right = false;
   }
-  if(keyCode == SHIFT)
-  {
-    playerOne.punch = false;
-  }
   if(key == 'a' || key == 'A')
   {
     playerTwo.left = false;
@@ -64,12 +63,40 @@ public void keyReleased()
   {
     playerTwo.right = false;
   }
-  if(key == 'q' || key == 'Q')
+}
+
+void serialEvent(Serial myPort)
+{
+  String inString = myPort.readStringUntil('\n');
+  
+  if(inString != null)
   {
-    playerTwo.punch = false;
+    inString = trim(inString);
+    float[] vals = float(split(inString,","));
+  
+    float forceP1 = map(vals[0],0,1023,0,3);
+    float forceP2 = map(vals[1],0,1023,0,3);
+    println("" + forceP1);
+    if(forceP1 > 0.1)
+    {
+      playerOne.healthBar.damage = forceP1;
+      playerOne.punch = true;
+    }
+    else
+    {
+      playerOne.healthBar.damage = 0;
+      playerOne.punch = false;
+    }
+    
+    if(forceP2 > 0.1)
+    {
+      playerTwo.healthBar.damage = forceP2;
+      playerTwo.punch = true;
+    }
+    else
+    {
+      playerTwo.healthBar.damage = 0;
+      playerTwo.punch = false;
+    }
   }
-=======
-  image(p1,200,650,50,50);
-  image(p2,1000,50,50,50);
->>>>>>> origin/master
 }

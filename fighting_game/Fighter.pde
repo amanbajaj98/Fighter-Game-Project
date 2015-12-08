@@ -13,7 +13,7 @@ class Fighter
   private HealthBar healthBar;
   private boolean flipped;
   private boolean punch;
-  private String imageLocation;  
+  private String imageLocation; 
   
   Fighter(float _x,float _y,String imgLoc,boolean player,boolean hbb)
   {
@@ -164,13 +164,6 @@ class Fighter
   {
     if(playerOne)
     {
-      if(keyPressed)
-      {
-        if(keyCode == SHIFT)
-        {
-          punch = true;
-        }
-      }
       if(punch)
       {
         imageLocation = "derp.png";
@@ -182,13 +175,6 @@ class Fighter
     }
     if(!playerOne)
     {
-      if(keyPressed)
-      {
-        if(key == 'q' || key == 'Q')
-        {
-          punch = true;
-        }
-      }
       if(punch)
       {
         imageLocation = "derp.png";

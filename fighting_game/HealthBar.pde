@@ -1,5 +1,6 @@
 class HealthBar
 {
+<<<<<<< HEAD
   private boolean playerOne;
   private int x;
   private int y;
@@ -12,6 +13,18 @@ class HealthBar
   private String hlth;
   
  HealthBar(boolean P1)
+=======
+  boolean playerOne;
+  int x;
+  int y;
+  float w;
+  int h;
+  color c;
+  float damage;
+  String s = "Player 1: Ryu";
+  String s2 = "Player 2: Guile";
+  HealthBar(boolean P1)
+>>>>>>> origin/master
   {
     if(P1 == true)
     {
@@ -89,6 +102,7 @@ class HealthBar
     {
       c = color(0,0,0);
     }
+<<<<<<< HEAD
     if(w == 500)
     {
       hlth = "Player Health Level Full";
@@ -144,6 +158,8 @@ class HealthBar
       textSize(32);
       text(hlth, 275, 650, 2100, 100);
     }
+=======
+>>>>>>> origin/master
     if(keyPressed == true)
     {
       if (w > 450)

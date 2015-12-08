@@ -13,7 +13,31 @@ class Fighter
   private HealthBar healthBar;
   private boolean flipped;
   private boolean punch;
+<<<<<<< HEAD
   private String imageLocation; 
+=======
+  private String imageLocation;  
+  PImage GIDLERIGHT;
+  PImage GIDLELEFT;
+  PImage GWALKINGRIGHT;
+  PImage GWALKINGLEFT;
+  PImage GJUMPINGRIGHT;
+  PImage GJUMPINGLEFT;
+  PImage GCROUCHINGRIGHT;
+  PImage GCROUCHINGLEFT;
+  PImage GATTACKINGRIGHT;
+  PImage GATTACKINGLEFT;
+  PImage RIDLERIGHT;
+  PImage RIDLELEFT;
+  PImage RWALKINGRIGHT;
+  PImage RWALKINGLEFT;
+  PImage RJUMPINGRIGHT;
+  PImage RJUMPINGLEFT;
+  PImage RCROUCHINGRIGHT;
+  PImage RCROUCHINGLEFT;
+  PImage RATTACKINGRIGHT;
+  PImage RATTACKINGLEFT;
+>>>>>>> origin/master
   
   Fighter(float _x,float _y,String imgLoc,boolean player,boolean hbb)
   {
@@ -24,6 +48,29 @@ class Fighter
     imageLocation = imgLoc;
   }
   
+  public void LoadImage()
+  {
+    GIDLERIGHT = loadImage("GIdle.png");
+    GIDLELEFT = loadImage("GIdleL.png");
+    GWALKINGRIGHT = loadImage("GWalk.png");
+    GWALKINGLEFT = loadImage("GWalkL.png");
+    GJUMPINGRIGHT = loadImage("GJump.png");
+    GJUMPINGLEFT = loadImage("GJumpL.png");
+    GCROUCHINGRIGHT = loadImage("GCrouch.png");
+    GCROUCHINGLEFT = loadImage("GCrouchL.png");
+    GATTACKINGRIGHT = loadImage("GPunchR.png");
+    GATTACKINGLEFT = loadImage("GPunch.png");
+    RIDLERIGHT = loadImage("RIdle.png");
+    RIDLELEFT = loadImage("RIdleL.png");
+    RWALKINGRIGHT = loadImage("RWalkRight.png");
+    RWALKINGLEFT = loadImage("RWalkLeft.png");
+    RJUMPINGRIGHT = loadImage("RJumpRIGHT.png");
+    RJUMPINGLEFT = loadImage("RJumpLeft.png");
+    RCROUCHINGRIGHT = loadImage("RCrouchRIGHT.png");
+    RCROUCHINGLEFT = loadImage("RCrouchLeft.png");
+    RATTACKINGRIGHT = loadImage("RPunchRIGHT.png");
+    RATTACKINGLEFT = loadImage("RPunchLeft.png");
+  }
   public void drawFighter()
   {
     image = loadImage(imageLocation);
@@ -52,15 +99,21 @@ class Fighter
       {
         if(key == 'd' || key == 'D')
         {
-          right = true;
+          right = true; 
+          imageLocation = "GWalk.png";
+          print("hello");
         }
         if(key == 'a' || key == 'A')
         {
           left = true;
+          imageLocation = "GWalkL.png";
+          print("hello");
         }
         if(key == 'w' || key == 'W')
         {
           jumped = true;
+          imageLocation = "GJump.png";
+          print("hello");
         }
       }
         if(playerOne && key == CODED)
@@ -93,13 +146,16 @@ class Fighter
     if(right)
     {
       pos.x += speed;
-      
     }
     if(left)
     {
       pos.x -= speed;
     }
-    
+    if(jumped && left && !playerOne)
+    {
+      imageLocation = "GJumpL.png";
+      print("hello");
+    }
   }
   
   public void collision(Fighter other)
@@ -166,22 +222,22 @@ class Fighter
     {
       if(punch)
       {
-        imageLocation = "derp.png";
+        imageLocation = "RPunchLeft.png";
       }
       else
       {
-        imageLocation = "ryu.png";
+        imageLocation = "RIdleL.png";
       }
     }
     if(!playerOne)
     {
       if(punch)
       {
-        imageLocation = "derp.png";
+        imageLocation = "GPunchR.png";
       }
       else
       {
-        imageLocation = "guile.png";
+        imageLocation = "GIdle.png";
       }
     }
   }

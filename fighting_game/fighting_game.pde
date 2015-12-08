@@ -43,6 +43,8 @@ void draw()
   playerOne.flip(playerTwo);
   playerOne.punch();
   playerTwo.punch();
+  image(p1,200,650,50,50);
+  image(p2,1000,50,50,50);
 }
 
 void keyReleased()

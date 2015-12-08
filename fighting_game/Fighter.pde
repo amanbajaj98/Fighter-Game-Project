@@ -97,14 +97,19 @@ class Fighter
         {
           right = true; 
           imageLocation = "GWalk.png";
+          print("hello");
         }
         if(key == 'a' || key == 'A')
         {
           left = true;
+          imageLocation = "GWalkL.png";
+          print("hello");
         }
         if(key == 'w' || key == 'W')
         {
           jumped = true;
+          imageLocation = "GJump.png";
+          print("hello");
         }
       }
         if(playerOne && key == CODED)
@@ -142,7 +147,11 @@ class Fighter
     {
       pos.x -= speed;
     }
-    
+    if(jumped && left && !playerOne)
+    {
+      imageLocation = "GJumpL.png";
+      print("hello");
+    }
   }
   
   public void collision(Fighter other)
